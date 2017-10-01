@@ -173,6 +173,11 @@ interpret libdir allowedStdin action = runGhc (Just libdir) $ do
       void $ setSessionDynFlags $ dflags { verbosity = verb }
     Nothing -> return ()
 
+  dflags' <- getSessionDynFlags
+  let libDirs = libraryPaths dflags' 
+  void $ setSessionDynFlags $ dflags' { libraryPaths = libDirs++["/usr/local/lib"] }
+  dflags'' <- getSessionDynFlags
+  print $ "Debug stmt " ++ show (libraryPaths dflags'') ++ " " ++ libdir
   hasSupportLibraries <- initializeImports
 
   -- Close stdin so it can't be used. Otherwise it'll block the kernel forever.

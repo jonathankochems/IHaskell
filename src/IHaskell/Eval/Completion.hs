@@ -87,7 +87,7 @@ complete code posOffset = do
       qualNames = nub $ scopeNames ++ filter isQualified rdrNames
 
   let Just db = pkgDatabase flags
-      getNames = map (moduleNameString . exposedName) . exposedModules
+      getNames = const [] -- map (moduleNameString . exposedName) . exposedModules
 #if MIN_VERSION_ghc(8,0,0)
       moduleNames = nub $ concatMap getNames $ concatMap snd db
 #else
