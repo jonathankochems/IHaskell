@@ -15,7 +15,25 @@ packages:
     - ./ihaskell-display/ihaskell-static-canvas
     - ./ihaskell-display/ihaskell-widgets
 resolver: lts-9.0
-extra-deps: []
+extra-deps: 
+- containers-0.5.8.2
+flags:
+  ihaskell:
+    binpkgdb: false
+
+nix:
+  enable: false
+  packages:
+    - blas
+    - cairo
+    - file
+    - gcc
+    - liblapack
+    - ncurses
+    - pango
+    - pkgconfig
+    - zeromq
+    - zlib
 flags:
   ihaskell:
     binpkgdb: false
