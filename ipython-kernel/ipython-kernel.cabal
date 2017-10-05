@@ -38,7 +38,7 @@ library
                        aeson           ,
                        bytestring      ,
                        cereal          ,
-                       containers      ,
+                       containers >= 0.5.8.2      ,
                        directory       ,
                        temporary       ,
                        filepath        ,

@@ -60,7 +60,7 @@ library
                        bytestring           >=0.10,
                        cereal               >=0.3,
                        cmdargs              >=0.10,
-                       containers           >=0.5,
+                       containers           >=0.5.8.2,
                        directory            -any,
                        filepath             -any,
                        ghc                  >=7.6,
